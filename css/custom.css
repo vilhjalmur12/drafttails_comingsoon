@@ -106,5 +106,28 @@
     transform: scale(1.1);
 }
 
+.size-title {
+    margin-bottom: 10px;
+}
+
+
+/*  Mobile size  */
+@media (max-width: 600px) {
+    .main-logo {
+        height: 260px;
+    }
+    
+    .nav-logo-img {
+        height: 75px;
+    }
+  }
+
+
+/* tablet size  */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .main-logo {
+        height: 450px;
+    } 
+  }
 
 

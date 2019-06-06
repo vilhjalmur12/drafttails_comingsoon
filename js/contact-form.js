@@ -34,9 +34,33 @@ $(document).ready(function(){
                 'userEmail': user_email,
                 'userMessage': user_message
             };
-            
-            //Ajax post data to server
-            $.post('http://localhost:5000/api/email', post_data, function(response){
+            /*
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:5000/api/email",
+                data: post_data,
+                async: false,
+                success: function(response) {
+                    //load json data from server and output message     
+                    if (response.type == 'error') {
+                        output = '<div class="error">' + response.text + '</div>';
+                    }
+                    else {
+                    
+                        output = '<div class="success">' + response.text + '</div>';
+                        
+                        //reset values in all input fields
+                        $('#contact_form input').val('');
+                        $('#contact_form textarea').val('');
+                    }
+                    
+                    $("#result").hide().html(output).slideDown();
+                }
+            });
+            */
+
+
+            $.post('../php/', post_data, function(response){
             
                 //load json data from server and output message     
                 if (response.type == 'error') {
@@ -53,6 +77,17 @@ $(document).ready(function(){
                 
                 $("#result").hide().html(output).slideDown();
             }, 'json');
+        
+
+            
+            output = '<div class="success">' + 'Hæ ' + user_name + '! Takk fyrir skilaboðin, við heyrum í þér fljótlega.' + '</div>';
+                
+            //reset values in all input fields
+            $('#contact_form input').val('');
+            $('#contact_form textarea').val('');
+            
+            $("#result").hide().html(output).slideDown();
+
             
         }
         
