@@ -1,7 +1,7 @@
 <?php
 if($_POST)
 {
-	$to_Email   	= "vilhjalmur12@ru.is"; //Replace with recipient email address
+	$to_Email   	= "info@icebreakersofmixology.com"; //Replace with recipient email address
 	$subject        = 'Message from website '; //Subject line for emails
 	
 	

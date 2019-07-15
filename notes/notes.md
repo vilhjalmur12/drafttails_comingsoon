@@ -23,4 +23,7 @@ ISNIC þjónar
 parking00.isnic.is
 parking01.isnic.is
 
-
+apache restart
+'''
+sudo /etc/init.d/apache2 restart
+'''

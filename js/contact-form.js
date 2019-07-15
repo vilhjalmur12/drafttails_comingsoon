@@ -4,6 +4,9 @@
 $(document).ready(function(){
     $("#submit_btn").click(function(){
         
+        console.log("fór í submit")
+
+
         //get input field values
         var user_name = $('input[name=name]').val();
         var user_email = $('input[name=email]').val();
@@ -60,7 +63,7 @@ $(document).ready(function(){
             */
 
 
-            $.post('../php/', post_data, function(response){
+            $.post('/php/contact_me.php', post_data, function(response){
             
                 //load json data from server and output message     
                 if (response.type == 'error') {
@@ -69,6 +72,7 @@ $(document).ready(function(){
                 else {
                 
                     output = '<div class="success">' + response.text + '</div>';
+                    //output = '<div class="success">' + 'Hæ ' + user_name + '! Takk fyrir skilaboðin, við heyrum í þér fljótlega.' + '</div>';
                     
                     //reset values in all input fields
                     $('#contact_form input').val('');
@@ -80,7 +84,7 @@ $(document).ready(function(){
         
 
             
-            output = '<div class="success">' + 'Hæ ' + user_name + '! Takk fyrir skilaboðin, við heyrum í þér fljótlega.' + '</div>';
+            
                 
             //reset values in all input fields
             $('#contact_form input').val('');
